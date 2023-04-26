@@ -157,24 +157,30 @@ def lstm_function(ticker):
 
     y_pred = model.predict(X_test)
     #y_pred=np.where(y_pred > 0.43, 1,0)
-    for i in range(10):
-        print(y_pred[i], y_test[i])
+    #for i in range(10):
+        #print(y_pred[i], y_test[i])
 
 
     # In[34]:
 
-
+    #use this for matplotlib
     plt.figure(figsize=(16,8))
     plt.plot(y_test, color = 'black', label = 'Test')
     plt.plot(y_pred, color = 'blue', label = 'pred')
     plt.legend()
     plt.show()
 
+    return y_pred, y_test
+
 
     # In[ ]:
 
 # to test if it works
-lstm_function('AMZN')
+pred, test = lstm_function('AMZN')
+
+#should work
+for i in range(10):
+    print(pred[i], test[i])
 
 
 
