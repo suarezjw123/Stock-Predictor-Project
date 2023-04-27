@@ -2,10 +2,10 @@ import React, { useState, useEffect} from 'react'
 
 // Testing to see that this code can be committed to GitHub!
 
-
 function App() {
+  
   const [data, setData] = useState([{}])
-
+  
   useEffect(() => {
     fetch("/members").then( 
       res => res.json()

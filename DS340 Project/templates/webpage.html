@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    html{
+        height: 100%;
+        height: 100%;
+        background: linear-gradient(black,rgb(71, 63, 17),gold);
+		background-repeat: no-repeat;
+    }
+
+
+</style>
+<body>
+    
+    
+    <div class="bd-example" align="middle">
+    <h1 style="color:powderblue;"></h1>
+    <img src="{{url_for('static', filename='beanstock.png')}}" width = "642" height = "400" align="middle" />
+    <form method="POST" action ="/">
+        <input type="text" placeholder = "stock" name = "stock">
+        <input type = "submit">
+    </form>
+</div>
+</body>
+</html>

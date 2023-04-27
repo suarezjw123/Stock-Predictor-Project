@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url('/static/background1.png')
+    }
+ 
+</style>
+<body>
+    
+    <button onclick="location.href='{{ prev_page or url_for(home) }}';">Go back</button>
+    <p></p>
+    <div class="bd-example" align="middle">
+    <p style="color:white;">Stock: {{stockname}}</p>
+    <img src="{{ url_for('plot_png', stockname = stockname) }}" alt="My Plot">
+    </div>
+    
+        
+</body>
+</html>
