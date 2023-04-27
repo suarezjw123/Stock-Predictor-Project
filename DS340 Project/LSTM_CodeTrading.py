@@ -164,11 +164,12 @@ def lstm_function(ticker):
     # In[34]:
 
     #use this for matplotlib
-    plt.figure(figsize=(16,8))
-    plt.plot(y_test, color = 'black', label = 'Test')
-    plt.plot(y_pred, color = 'blue', label = 'pred')
-    plt.legend()
-    plt.show()
+    #plt.figure(figsize=(16,8))
+    #plt.plot(y_test, color = 'black', label = 'Test')
+    #plt.plot(y_pred, color = 'blue', label = 'pred')
+    #plt.legend()
+    #plt.show()
+
 
     return y_pred, y_test
 
@@ -176,11 +177,11 @@ def lstm_function(ticker):
     # In[ ]:
 
 # to test if it works
-pred, test = lstm_function('AMZN')
+#pred, test = lstm_function('AMZN')
 
 #should work
-for i in range(10):
-    print(pred[i], test[i])
+#for i in range(10):
+    #print(pred[i], test[i])
 
 
 

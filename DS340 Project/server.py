@@ -5,6 +5,7 @@ import random
 from flask import Response
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
+
 import LSTM_CodeTrading as LST
 #23:28
 app = Flask(__name__)
@@ -73,15 +74,16 @@ def create_figure(stockname):
     #test = data1
     #predict = data2
 
-    x1, y1 = zip(*test)
-    x2, y2 = zip(*predict)
+    
+    y1 = test
+    y2 = predict
+    x1 = range(len(y1))
+    x2 = range(len(y2))
     
     axis.plot(x1, y1, label='Line 1', color = 'white')
     axis.plot(x2, y2, label='Line 2', color = 'gold')
     
     axis.legend(['Test', 'Predicted'])
-    axis.set_xlabel('Years', color = 'white')
-    axis.set_ylabel('Price', color = 'white')
     axis.set_title(stockname, color = 'white')
     axis.tick_params(colors='white')
     axis.set_facecolor('black')
