@@ -17,7 +17,7 @@
     <button onclick="location.href='{{ prev_page or url_for(home) }}';">Go back</button>
     <p></p>
     <div class="bd-example" align="middle">
-    <p style="color:white;">Stock: {{stockname}}</p>
+    <p style="color:white;"> <b>Input Ticker: </b> {{stockname}}</p>
     <img src="{{ url_for('plot_png', stockname = stockname) }}" alt="My Plot">
     </div>
     
