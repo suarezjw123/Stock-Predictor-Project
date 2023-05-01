@@ -80,7 +80,7 @@ def lstm_function(ticker):
 
     # split data into train test sets
     splitlimit = int(len(X)*0.8)        
-    print(splitlimit)
+    #print(splitlimit)
     X_train, X_test = X[:splitlimit], X[splitlimit:]
     y_train, y_test = y[:splitlimit], y[splitlimit:]
     #print(X_train.shape)
@@ -123,5 +123,5 @@ def lstm_function(ticker):
     y_pred = model.predict(X_test)
     #y_pred=np.where(y_pred > 0.43, 1,0)
     for i in range(10):
-        return y_pred, y_test
+        return y_test, y_pred
 
