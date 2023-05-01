@@ -6,8 +6,8 @@ from flask import Response
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 
-import LSTM_CodeTrading as LST
-#23:28
+import LSTM_RNN_Code as LSTM
+
 app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 
@@ -41,12 +41,7 @@ def s_name(stockname):
 
 @app.route('/plot.png/<stockname>')
 def plot_png(stockname):
-    #lst.lstm_function()
-    #lx = range(100)
-    #ly = [random.randint(1, 50) for x in lx]
-
-    #bx = range(100)
-    #by = [random.randint(1, 50) for x in lx]
+    
     print(stockname)
     fig = create_figure(stockname)
     output = io.BytesIO()
@@ -67,13 +62,7 @@ def create_figure(stockname):
     fig = Figure(facecolor = 'black')
     axis = fig.add_subplot(1, 1, 1)
     
-    test, predict = LST.lstm_function(stockname)
-    #data1 = [(1, 2), (2, 4), (3, 1), (4, 5), (5, 3)]
-    #data2 = [(1, 1), (2, 3), (3, 2), (4, 4), (5, 5)]
-    
-    #test = data1
-    #predict = data2
-
+    test, predict = LSTM.lstm_function(stockname)
     
     y1 = test
     y2 = predict
@@ -95,5 +84,3 @@ if __name__ == '__main__':
     app.run(debug = True)
 
 
-
-#background: linear-gradient(white,rgb(183, 164, 164));
